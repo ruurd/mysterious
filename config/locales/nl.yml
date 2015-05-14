@@ -1,5 +1,4 @@
 nl:
-  mysterious: 'Mysterieus'
   bureaupels: 'Bureau Pels'
   bureaupels_street: 'Boogerd 1'
   bureaupels_zipcode: '1791 GW'
@@ -13,6 +12,23 @@ nl:
     nl: 'Nederlands'
   layouts:
     application:
-      welcome: 'Welkom'
       about: 'Over'
+      branding: 'Mysterieus'
+      mysteries: 'Mysteries'
+      welcome: 'Welkom'
+      user: 'Gebruiker'
+      sign_in: 'Aanmelden'
+      sign_out: 'Afmelden'
+      sign_up: 'Registreren als gebruiker'
+  about:
+    index:
+      title: 'Over'
+      text: 'Deze webapplicatie is het resultaat van een assessment taak die ik heb gedaan voor trycatch.us'
+  mysteries:
+    index:
+      title: 'Mysteries'
+  welcome:
+    index:
+      title: 'Welkom'
+      text: 'Wat deze applicatie doet en op welke manier'
 

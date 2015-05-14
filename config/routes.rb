@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   # Keepalive monitoring
   get 'keepalive', to: 'monitor#keepalive'
 
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
   get 'change_locale', to: 'application#change_locale'
 
   scope '(:locale)' do
-    get 'mysterious', to:'mysterious#index'
+    get 'mysteries', to:'mysteries#index'
     get 'about', to: 'about#index'
     get 'sysinfo', to: 'sysinfo#index'
   end

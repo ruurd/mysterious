@@ -40,14 +40,30 @@
 
 //@import "datepicker/datepicker";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  /* Padding top by navbar height */
   padding-top: 60px;
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
 }
 .footer {
-  background-color: rgb(231, 231, 231);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 120px;
+  color: lightgray;
+  background-color: black;
   padding-bottom: 1em;
+}
+.footer a {
+  color: lightgray;
+  text-decoration: none;
 }
 .footer i {
   width: 20px;
 }
-

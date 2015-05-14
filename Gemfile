@@ -13,6 +13,7 @@ gem 'coffee-rails'
 
 # Authentication
 gem 'devise'
+gem 'devise-i18n'
 
 # Views and widgets
 gem 'jquery-rails'

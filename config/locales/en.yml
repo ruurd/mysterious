@@ -1,5 +1,4 @@
 en:
-  mysterious: 'Mysterious'
   bureaupels: 'Bureau Pels'
   bureaupels_street: 'Boogerd 1'
   bureaupels_zipcode: '1791 GW'
@@ -14,4 +13,21 @@ en:
   layouts:
     application:
       about: 'About'
+      branding: 'Mysterious'
+      mysteries: 'Mysteries'
       welcome: 'Welcome'
+      user: 'User'
+      sign_in: 'Sign in'
+      sign_out: 'Sign out'
+      sign_up: 'Sign up'
+  about:
+    index:
+      title: 'About'
+      text: 'This application is the result of an assessment task I did for trycatch.us'
+  mysteries:
+    index:
+      title: 'Mysteries'
+  welcome:
+    index:
+      title: 'Welcome'
+      text: 'Explain what this application does and in which way'
