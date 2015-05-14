@@ -3,11 +3,16 @@ ruby '2.2.2'
 
 # General stuff
 gem 'rails'
+gem 'rails_config'
+gem 'i18n'
 gem 'haml'
 gem 'thin'
 gem 'pg'
 gem 'uglifier'
 gem 'coffee-rails'
+
+# Authentication
+gem 'devise'
 
 # Views and widgets
 gem 'jquery-rails'

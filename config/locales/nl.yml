@@ -1,2 +1,18 @@
 nl:
-  hello: "Hallo wereld"
+  mysterious: 'Mysterieus'
+  bureaupels: 'Bureau Pels'
+  bureaupels_street: 'Boogerd 1'
+  bureaupels_zipcode: '1791 GW'
+  bureaupels_place: 'Den Burg'
+  bureaupels_country: 'Nederland'
+  bureaupels_phone: '+31222315034'
+  bureaupels_mobile: '+31612914545'
+  copyright: '&copy; 2015 Bureau Pels'
+  languages:
+    en: 'Engels'
+    nl: 'Nederlands'
+  layouts:
+    application:
+      welcome: 'Welkom'
+      about: 'Over'
+
