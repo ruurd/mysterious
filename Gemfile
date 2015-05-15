@@ -12,9 +12,10 @@ gem 'pg'
 gem 'uglifier'
 gem 'coffee-rails'
 
-# Authentication
+# Authentication and authorization
 gem 'devise'
 gem 'devise-i18n'
+gem 'cancancan'
 
 # Views and widgets
 gem 'jquery-rails'
