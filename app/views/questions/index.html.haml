@@ -1,0 +1,20 @@
+= render 'shared/index_header', name: Question.model_name.human
+%table.table.table-condensed.table-bordered
+  %thead
+    %tr
+      = thsortable 'user', t('.user')
+      = thsortable 'description', t('.description')
+      = thsortable 'query', t('.query')
+      = thsortable 'created_at', t('.created_at')
+      = thsortable 'updated_at', t('.updated_at')
+      %th
+        %i.icon-flag
+  %tbody
+    -@questions.each do |question|
+      %tr
+        = render 'row', :question => question
+        %td
+          = link_to t(:'button.show'), question_path(question), :class => "btn btn-xs"
+          = link_to t(:'button.edit'), edit_question_path(question), :class => "btn btn-xs"
+          = link_to t(:'button.destroy'), [question], :class => "btn btn-danger btn-xs", data: {confirm: t('alert.are_you_sure')}, method: :delete
+= link_to t(:'button.add'), new_question_path, :class => "btn btn-xs btn-success"

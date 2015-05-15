@@ -1,0 +1,18 @@
+= render 'shared/show_header', name: Question.model_name.human
+.row-fluid
+  %span.col-md-12
+    %table.table.table-striped.table-bordered.table-condensed
+      = render 'shared/show_thead'
+      %tbody
+        %tr
+          %td= t('.user')
+          %td= @question.user
+        %tr
+          %td= t('.description')
+          %td= @question.description
+        %tr
+          %td= t('.query')
+          %td= t(@question.query)
+.row-fluid
+  %span.col-md-12
+    = link_to t(:'button.back_to_list'), questions_path, class: "btn btn-xs"

@@ -10,23 +10,39 @@ nl:
   languages:
     en: 'Engels'
     nl: 'Nederlands'
+  button:
+    add: 'Toevoegen'
+    back_to_list: 'Terug naar lijst'
+    cancel: 'Annuleren'
+    destroy: 'Verwijderen'
+    details: 'Details'
+    edit: 'Wijzigen'
+    ok: 'OK'
+    save: 'Opslaan'
+    search: 'Zoeken'
+    send: 'Verzenden'
+    sendagain: 'Nogmaals verzenden'
+    show: 'Tonen'
+  alert:
+    are_you_sure: 'Weet u het zeker?'
   layouts:
     application:
       about: 'Over'
       branding: 'Mysterieus'
-      mysteries: 'Mysteries'
+      questions: 'Kwesties'
       welcome: 'Welkom'
       user: 'Gebruiker'
       sign_in: 'Aanmelden'
       sign_out: 'Afmelden'
       sign_up: 'Registreren als gebruiker'
+      edit_profile: 'Gegevens wijzigen'
   about:
     index:
       title: 'Over'
       text: 'Deze webapplicatie is het resultaat van een assessment taak die ik heb gedaan voor trycatch.us'
-  mysteries:
+  questions:
     index:
-      title: 'Mysteries'
+      title: 'Kwesties'
   welcome:
     index:
       title: 'Welkom'

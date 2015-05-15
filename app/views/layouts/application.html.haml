@@ -9,14 +9,23 @@
     = nav_bar fixed: :top, brand: t('.branding'), responsive: true do
       = menu_group do
         = menu_item t('.welcome'), root_path
-        = menu_item t('.mysteries'), mysteries_path
+        = menu_item t('.questions'), questions_path
       = menu_group pull: :right do
+        - if current_user.try(:admin?)
+          = drop_down t('.admin') do
+            = menu_item t('.users'), users_path
+            = menu_item t('.sysinfo'), sysinfo_path
         = menu_item t('.about'), about_path
-        = drop_down t('.user') do
-          = menu_item t('.sign_in'), new_user_session_path
-          = menu_item t('.sign_out'), destroy_user_session_path, method: 'delete'
-          = drop_down_divider
-          = menu_item t('.sign_up'), new_user_registration_path
+        - if current_user
+          = drop_down current_user.email do
+            = menu_item t('.edit_profile'), edit_user_registration_path(current_user)
+            = drop_down_divider
+            = menu_item t('.sign_out'), destroy_user_session_path, method: 'delete'
+        - else
+          = drop_down t('.user') do
+            = menu_item t('.sign_in'), new_user_session_path
+            = drop_down_divider
+            = menu_item t('.sign_up'), new_user_registration_path
         = drop_down image_tag(image_path("flags/#{I18n.locale}.gif")) do
           - Settings.translations.application.each do |translation|
             = menu_item link_to raw("#{image_tag(image_path("flags/#{translation}.gif"))} #{language_name(translation)}"), change_locale_path(:new_locale => translation)

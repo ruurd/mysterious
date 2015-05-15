@@ -24,4 +24,22 @@ class ApplicationController < ActionController::Base
     session[:locale] = I18n.locale
   end
 
+  private
+
+  # Determine locale from tld
+  def locale_from_tld
+    parsed_locale = request.host.split('.').last
+    Settings.translations.application.include?(parsed_locale.to_sym) ? parsed_locale : nil
+  end
+
+  # Determine sort direction, asc per default
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
+  end
+
+  # Determine sort column and direction
+  def sort_specification
+    sort_column + ' ' + sort_direction
+  end
+
 end

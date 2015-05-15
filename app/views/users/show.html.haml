@@ -1,0 +1,15 @@
+= render 'shared/show_header', name: User.model_name.human
+.row-fluid
+  %span.col-md-12
+    %table.table.table-striped.table-bordered.table-condensed
+      = render 'shared/show_thead'
+      %tbody
+        %tr
+          %td= t('.email')
+          %td= @user.email
+        %tr
+          %td= t('.admin')
+          %td= t(@user.admin)
+.row-fluid
+  %span.col-md-12
+    = link_to t(:'button.back_to_list'), users_path, class: "btn btn-xs"

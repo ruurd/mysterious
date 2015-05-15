@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get 'change_locale', to: 'application#change_locale'
 
   scope '(:locale)' do
-    get 'mysteries', to:'mysteries#index'
     get 'about', to: 'about#index'
     get 'sysinfo', to: 'sysinfo#index'
+
+    resources :users
+    resources :questions
   end
 
   root 'welcome#index'

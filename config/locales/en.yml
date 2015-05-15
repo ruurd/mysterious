@@ -10,23 +10,39 @@ en:
   languages:
     en: 'English'
     nl: 'Dutch'
+  button:
+    add: 'Add'
+    back_to_list: 'Back to list'
+    cancel: 'Cancel'
+    destroy: 'Destroy'
+    details: 'Details'
+    edit: 'Edit'
+    ok: 'OK'
+    save: 'Save'
+    search: 'Search'
+    send: 'Send'
+    sendagain: 'Send again'
+    show: 'Show'
+  alert:
+    are_you_sure: 'Are you sure?'
   layouts:
     application:
       about: 'About'
       branding: 'Mysterious'
-      mysteries: 'Mysteries'
+      questions: 'Questions'
       welcome: 'Welcome'
       user: 'User'
       sign_in: 'Sign in'
       sign_out: 'Sign out'
       sign_up: 'Sign up'
+      edit_profile: 'Edit profile'
   about:
     index:
       title: 'About'
       text: 'This application is the result of an assessment task I did for trycatch.us'
-  mysteries:
+  questions:
     index:
-      title: 'Mysteries'
+      title: 'Questions'
   welcome:
     index:
       title: 'Welcome'

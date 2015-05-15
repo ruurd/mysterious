@@ -21,4 +21,28 @@ module ApplicationHelper
     t("languages.#{loc}")
   end
 
+  # Build a sortable header
+  # @param column the column that must be sortable
+  # @param title the title of the column
+  # @return a sortable column header
+  def thsortable(column, title = nil)
+    title ||= column.titleize
+    css_class = column == sort_column ? 'current #{sort_direction}' : nil
+    direction = column == sort_column && sort_direction == 'asc' ? 'desc' : 'asc'
+    content_tag(:th, class: css_class) do
+      link_to title, { sort: column, direction: direction }
+    end
+  end
+
+  # Build a sortable tab
+  # @param column the column that must be sortable
+  # @param title the title of the column
+  # @return a sortable tab
+  def tabsortable(tab, column, title = nil)
+    title ||= column.titleize
+    css_class = (column == sort_column) ? 'sortable current #{sort_direction}' : 'sortable'
+    direction = (column == sort_column && sort_direction == 'asc') ? 'desc' : 'asc'
+    link_to title, { tab: tab, sort: column, direction: direction }, { class: css_class }
+  end
+
 end
