@@ -1,0 +1,30 @@
+= render 'shared/show_header', name: Answer.model_name.human
+.row-fluid
+  %span.col-md-12
+    %table.table.table-striped.table-bordered.table-condensed
+      = render 'shared/show_thead'
+      %tbody
+        %tr
+          %td= t('.user')
+          %td= @answer.question.user.email
+        %tr
+          %td= t('.description')
+          %td= @answer.question.description
+        %tr
+          %td= t('.query')
+          %td= t(@answer.question.query)
+        %tr
+          %td= t('.title')
+          %td= raw(@answer.title)
+        %tr
+          %td= t('.content')
+          %td= raw(@answer.content)
+        %tr
+          %td= t('.link')
+          %td= @answer.link
+        %tr
+          %td= t('.googled')
+          %td= @answer.googled
+.row-fluid
+  %span.col-md-12
+    = link_to t(:'button.back_to_list'), question_path(@answer.question), class: "btn btn-xs"

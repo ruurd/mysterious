@@ -1,3 +1,3 @@
 json.questions @questions do |question|
-  json.extract! question, :user_id, :description, :query, :created_at, :updated_at
+  json.extract! question, :id, :user_id, :description, :query, :googled_at, :created_at, :updated_at
 end

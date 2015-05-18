@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  # Use devise for authentication
   devise_for :users
 
   # Keepalive monitoring
@@ -12,9 +14,19 @@ Rails.application.routes.draw do
     get 'sysinfo', to: 'sysinfo#index'
 
     resources :users
-    resources :questions
+    resources :questions do
+      resources :answers
+      member do
+        get 'google_it'
+        get 'come_back_later'
+      end
+    end
   end
 
   root 'welcome#index'
+
+  authenticated :user, -> user { user.admin? } do
+    mount Delayed::Web::Engine, at: '/jobs'
+  end
 
 end

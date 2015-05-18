@@ -27,10 +27,25 @@ gem 'bootstrap_form'
 gem 'kaminari-bootstrap'
 gem 'therubyracer'
 
+# Google search, duhh
+gem 'delayed_job_active_record'
+gem 'delayed-web',  github: 'thebestday/delayed-web'
+gem 'google-search'
+
+group :development do
+  gem 'bullet'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :doc do

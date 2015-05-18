@@ -15,4 +15,33 @@
           %td= t(@question.query)
 .row-fluid
   %span.col-md-12
+    %table.table-bordered.table-striped
+      %thead
+        %tr
+          %th #
+          = thsortable 'title', t('.title')
+          = thsortable 'content', t('.content')
+          = thsortable 'link', t('.link')
+          = thsortable 'googled', t('.googled')
+          %th
+            %i.icon-flag
+      %tbody
+        -@question.answers.decorate.each do |answer|
+          %tr
+            %td= answer.id
+            %td= raw(answer.title)
+            %td= raw(answer.content)
+            %td= link_to t('go_to_site'), raw(answer.link), class: "btn btn-xs"
+            %td= answer.googled
+            %td
+              = link_to t(:'button.show'), question_answer_path(@question, answer), :class => "btn btn-xs"
+              - if can? :update, answer
+                = link_to t(:'button.edit'), edit_question_answer_path(@question, answer), :class => "btn btn-xs"
+              - if can? :delete, answer
+                = link_to t(:'button.destroy'), [@question, answer], :class => "btn btn-danger btn-xs", data: {confirm: t('alert.are_you_sure')}, method: :delete
+    - if can? :create, Answer
+      = link_to t(:'button.add'), new_question_answer_path(@question), :class => "btn btn-xs btn-success"
+
+.row-fluid
+  %span.col-md-12
     = link_to t(:'button.back_to_list'), questions_path, class: "btn btn-xs"

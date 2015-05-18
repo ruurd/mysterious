@@ -1,26 +1,31 @@
 class AnswersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
-  # GET /answers
+  # GET /questions/:question_id/answers
   # GET /answers.json
   def index
-    @answers = Answer.search(params[:search]).order(sort_specification).page(params[:page]).decorate
+    @question = Question.find(params[:question_id])
+    @answers = @question.answers.search(params[:search]).order(sort_specification).page(params[:page]).includes(:question).decorate
   end
 
   # GET /answers/1
   # GET /answers/1.json
   def show
-    @answer = Answer.find(params[:id]).decorate
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id]).decorate
   end
 
   # GET /answers/new
   def new
+    @question = Question.find(params[:question_id])
     @answer = Answer.new
+    @answer.question = @question
   end
 
   # GET /answers/1/edit
   def edit
-    @answer = Answer.find(params[:id])
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
   end
 
   # POST /answers
@@ -42,7 +47,8 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
-    @answer = Answer.find(params[:id])
+    @question = Question.find(params[:question_id])
+    @answer = Answer.where(@question).find(params[:id])
     respond_to do |format|
       if @answer.update(answer_params)
         format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
@@ -57,15 +63,20 @@ class AnswersController < ApplicationController
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    @answer = Answer.find(params[:id])
+    @question = Question.find(params[:question_id])
+    @answer = Answer.where(@question).find(params[:id])
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to answers_url }
+      format.html { redirect_to question_answers_url(@question) }
       format.json { head :no_content }
     end
   end
 
   private
+
+  def answer_params
+    params.require(:answer).permit(:title, :content, :link)
+  end
 
   def sort_column
     Answer.column_names.include?(params[:sort]) ? params[:sort] : 'id'

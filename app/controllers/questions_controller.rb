@@ -6,13 +6,24 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.search(params[:search]).order(sort_specification).page(params[:page]).decorate
+    @questions = Question.includes(:answers).search(params[:search]).order(sort_specification).page(params[:page]).includes(:user).decorate
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
     @question = Question.find(params[:id]).decorate
+  end
+
+  def google_it
+    question = Question.find(params[:id])
+    if question
+      ::GoogleAnswersWorker.new.google_answers(question)
+      redirect_to action: 'come_back_later'
+    end
+  end
+
+  def come_back_later
   end
 
   # GET /questions/new

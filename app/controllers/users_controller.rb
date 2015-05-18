@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
+  load_and_authorize_resource
+
   # GET /users
   # GET /users.json
   def index

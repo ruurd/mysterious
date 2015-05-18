@@ -15,6 +15,7 @@
           = drop_down t('.admin') do
             = menu_item t('.users'), users_path
             = menu_item t('.sysinfo'), sysinfo_path
+            = menu_item t('.jobs'), delayed_web_path
         = menu_item t('.about'), about_path
         - if current_user
           = drop_down current_user.email do
@@ -30,7 +31,7 @@
           - Settings.translations.application.each do |translation|
             = menu_item link_to raw("#{image_tag(image_path("flags/#{translation}.gif"))} #{language_name(translation)}"), change_locale_path(:new_locale => translation)
     = bootstrap_flash
-    .container
+    .container.table-responsive
       .row
         = yield
     .footer
