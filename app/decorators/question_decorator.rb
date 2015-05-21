@@ -10,7 +10,7 @@ class QuestionDecorator < Draper::Decorator
   end
 
   def googled_at
-    object.googled_at.strftime('%Y%m%dT%H%M%S')
+    object.googled_at.strftime('%Y%m%dT%H%M%S') unless object.googled_at.nil?
   end
 
   def created_at

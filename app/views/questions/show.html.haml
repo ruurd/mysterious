@@ -39,7 +39,7 @@
                 = link_to t(:'button.edit'), edit_question_answer_path(@question, answer), :class => "btn btn-xs"
               - if can? :delete, answer
                 = link_to t(:'button.destroy'), [@question, answer], :class => "btn btn-danger btn-xs", data: {confirm: t('alert.are_you_sure')}, method: :delete
-    - if can? :create, Answer
+    - if can? :manage, @question
       = link_to t(:'button.add'), new_question_answer_path(@question), :class => "btn btn-xs btn-success"
 
 .row-fluid

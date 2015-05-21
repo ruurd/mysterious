@@ -23,6 +23,19 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    api_version(module: 'V1', header: {name: 'Mysterious-API', value: '1'}, default: true) do
+      devise_scope :user do
+        post 'sessions', to: 'sessions#create'
+        delete 'sessions', to: 'sessions#destroy'
+      end
+
+      resources :questions, only: [:index, :show, :create, :update, :destroy] do
+        resources :answers, only: [:index, :show, :create, :update, :destroy]
+      end
+    end
+  end
+
   root 'welcome#index'
 
   authenticated :user, -> user { user.admin? } do

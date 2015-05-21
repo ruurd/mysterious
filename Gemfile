@@ -5,6 +5,7 @@ ruby '2.2.2'
 gem 'rails'
 gem 'draper'
 gem 'rails_config'
+gem 'versionist'
 gem 'i18n'
 gem 'haml'
 gem 'thin'
@@ -44,6 +45,7 @@ end
 
 group :test do
   gem 'cucumber-rails', require: false
+  gem 'minitest'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
 end

@@ -4,13 +4,11 @@ class QuestionsController < ApplicationController
   load_and_authorize_resource
 
   # GET /questions
-  # GET /questions.json
   def index
     @questions = Question.includes(:answers).search(params[:search]).order(sort_specification).page(params[:page]).includes(:user).decorate
   end
 
   # GET /questions/1
-  # GET /questions/1.json
   def show
     @question = Question.find(params[:id]).decorate
   end
@@ -38,46 +36,32 @@ class QuestionsController < ApplicationController
   end
 
   # POST /questions
-  # POST /questions.json
   def create
     @question = Question.new(question_params)
     @question.user_id = current_user.id
 
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @question }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to @question, notice: 'Question was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /questions/1
-  # PATCH/PUT /questions/1.json
   def update
     @question = Question.find(params[:id])
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.update(question_params)
+      redirect_to @question, notice: 'Question was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /questions/1
-  # DELETE /questions/1.json
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    respond_to do |format|
-      format.html { redirect_to questions_url }
-      format.json { head :no_content }
-    end
+    redirect_to questions_url
   end
 
   private

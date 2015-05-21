@@ -9,7 +9,7 @@ class Ability
       else
         can :update, User, :id => user.id
         can :manage, Question, :user_id => user.id
-        # can :manage, Answer, :question.user_id => user.id
+        can :manage, Answer, :question => {:user_id => user.id}
       end
     end
   end

@@ -30,8 +30,8 @@
         = drop_down image_tag(image_path("flags/#{I18n.locale}.gif")) do
           - Settings.translations.application.each do |translation|
             = menu_item link_to raw("#{image_tag(image_path("flags/#{translation}.gif"))} #{language_name(translation)}"), change_locale_path(:new_locale => translation)
-    = bootstrap_flash
     .container.table-responsive
+      = bootstrap_flash
       .row
         = yield
     .footer
