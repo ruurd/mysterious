@@ -1,7 +1,11 @@
+#============================================================================
+# Question model
+#
 class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers, dependent: :destroy
 
+  # Make searchable
   def self.search(search)
     if search
       where('description LIKE :srch', srch: "%#{search}%")

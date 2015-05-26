@@ -1,3 +1,6 @@
+#============================================================================
+# Worker class that googles answers for a question
+#
 class GoogleAnswersWorker
   def google_answers(question)
 

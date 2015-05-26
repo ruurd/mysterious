@@ -1,3 +1,6 @@
+#============================================================================
+# API controller. Base class for all API controllers
+#
 class Api::V1::ApiController < ActionController::Base
 
   # Only respond to JSON

@@ -1,3 +1,6 @@
+#============================================================================
+# Answers controller. Checks if passed parameters are valid before continuing
+#
 class Api::V1::AnswersController < Api::V1::ApiController
 
   # Don't do CSRF checks on this
@@ -31,7 +34,7 @@ class Api::V1::AnswersController < Api::V1::ApiController
     end
   end
 
-  # PATCH/PUT /questions/:question_idanswers/1
+  # PATCH/PUT /questions/:question_id/answers/1
   def update
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])

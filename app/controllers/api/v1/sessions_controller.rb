@@ -1,3 +1,6 @@
+#============================================================================
+# Sessions controller. This controller handles authentication
+#
 class Api::V1::SessionsController < Devise::SessionsController
 
   # Only respond to JSON

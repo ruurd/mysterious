@@ -3,22 +3,27 @@ ruby '2.2.2'
 
 # General stuff
 gem 'rails'
-gem 'draper'
-gem 'rails_config'
-gem 'versionist'
 gem 'i18n'
 gem 'haml'
 gem 'thin'
 gem 'pg'
-gem 'uglifier'
-gem 'coffee-rails'
 
-# Authentication and authorization
+# draper is a gem that adds decorators to models.
+gem 'draper'
+
+# rails_config is a gem that adds multi-level configuration to rails
+gem 'rails_config'
+
+# Authentication...
 gem 'devise'
 gem 'devise-i18n'
+
+# ... and authorization
 gem 'cancancan'
 
 # Views and widgets
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
@@ -28,11 +33,12 @@ gem 'bootstrap_form'
 gem 'kaminari-bootstrap'
 gem 'therubyracer'
 
-# Google search, duhh
+# Google search in abackground job
 gem 'delayed_job_active_record'
 gem 'delayed-web',  github: 'thebestday/delayed-web'
 gem 'google-search'
 
+# bullet is a development gem that helps you reduce queries
 group :development do
   gem 'bullet'
 end

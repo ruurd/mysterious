@@ -1,3 +1,7 @@
+#============================================================================
+# Answer decorator. Decorators are a solution to helpers that tend to
+# pollute the namespace.
+#
 class AnswerDecorator < Draper::Decorator
   delegate_all
 

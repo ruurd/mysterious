@@ -93,19 +93,19 @@
     </object>
     <object type="LMREQUEST" id="z115">
         <attribute name="uuid" type="string">E23378C7-58E9-4D04-AC3C-0F7D3E64B43B</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions/1/answers/258.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions/1/answers/258.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">PATCH</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">["{\\n  \\"answer\\": {\\n    \\"title\\": \\"YYYFooCatchy new title folks\\"\\n  }\\n}"]</attribute>
+        <attribute name="body" type="string">["{\\n  \\"answer\\": {\\n    \\"title\\": \\"PQRFooCatchy new title folks\\"\\n  }\\n}"]</attribute>
         <attribute name="order" type="int64">5</attribute>
         <attribute name="name" type="string">Change the title</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z134 z136 z117 z119"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z136 z117"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z117">
         <attribute name="value" type="string">application/json</attribute>
@@ -117,19 +117,9 @@
         <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z115"></relationship>
     </object>
-    <object type="LMKEYVALUE" id="z119">
-        <attribute name="value" type="string">[{"data":{"charset":"us-ascii","username":["rfpels@gmail.com"],"password":["xyzzyuiop"]},"identifier":"com.luckymarmot.BasicAuthDynamicValue"}]</attribute>
-        <attribute name="order" type="int64">5</attribute>
-        <attribute name="name" type="string">Authorization</attribute>
-        <attribute name="enabled" type="bool">1</attribute>
-        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z115"></relationship>
-    </object>
     <object type="LMREQUEST" id="z120">
         <attribute name="uuid" type="string">12D81147-44F7-4D66-9BB1-DD0D462D6A9B</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -155,7 +145,7 @@
     <object type="LMREQUEST" id="z123">
         <attribute name="body" type="string">[{"data":{"json":"{}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
         <attribute name="uuid" type="string">C71ADFBD-0520-418B-8584-F582F719A34D</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/sessions.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/sessions.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -190,7 +180,7 @@
     </object>
     <object type="LMREQUEST" id="z127">
         <attribute name="uuid" type="string">1E857FA6-5F1F-4AD8-88DF-63408ED70374</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions/1/answers/259.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions/1/answers/260.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -202,22 +192,12 @@
         <attribute name="name" type="string">Change the title Duplicate</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z129 z140 z130"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z129 z140"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z129">
         <attribute name="value" type="string">application/json</attribute>
         <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">Content-Type</attribute>
-        <attribute name="enabled" type="bool">1</attribute>
-        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z127"></relationship>
-    </object>
-    <object type="LMKEYVALUE" id="z130">
-        <attribute name="value" type="string">1</attribute>
-        <attribute name="order" type="int64">6</attribute>
-        <attribute name="name" type="string">Mysterious-API</attribute>
         <attribute name="enabled" type="bool">1</attribute>
         <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
@@ -248,16 +228,6 @@
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z137 z131 z135"></relationship>
-    </object>
-    <object type="LMKEYVALUE" id="z134">
-        <attribute name="value" type="string">1</attribute>
-        <attribute name="order" type="int64">6</attribute>
-        <attribute name="name" type="string">Mysterious-API</attribute>
-        <attribute name="enabled" type="bool">1</attribute>
-        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
-        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z115"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z135">
         <attribute name="value" type="string">1</attribute>
@@ -321,7 +291,7 @@
     </object>
     <object type="LMREQUEST" id="z141">
         <attribute name="uuid" type="string">84AF1903-C87E-480C-A24A-CBEDD138CBDF</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions/1/answers.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions/1/answers.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -336,7 +306,7 @@
     </object>
     <object type="LMREQUEST" id="z142">
         <attribute name="uuid" type="string">4BB73C47-3C1B-41AD-BF5E-8F85B08CF20E</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions/1/answers/258.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions/1/answers/258.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -395,7 +365,7 @@
     </object>
     <object type="LMREQUEST" id="z148">
         <attribute name="uuid" type="string">17CAFCDE-7FE2-4D72-8342-40CE6DA90F69</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/questions/1.json</attribute>
+        <attribute name="url" type="string">http://localhost:3000/api/v1/questions/1.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>

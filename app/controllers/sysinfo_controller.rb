@@ -1,3 +1,6 @@
+#============================================================================
+# Sysinfo controller show system info to admins
+#
 class SysinfoController < ApplicationController
   def index
     begin

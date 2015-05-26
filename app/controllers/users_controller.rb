@@ -1,3 +1,6 @@
+#============================================================================
+# Users controller. Administrative interface for users
+#
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 

@@ -1,3 +1,6 @@
+#============================================================================
+# About controller
+#
 class AboutController < ApplicationController
   def index
 

@@ -1,3 +1,6 @@
+#============================================================================
+# Welcome controller
+#
 class WelcomeController < ApplicationController
   def index
 

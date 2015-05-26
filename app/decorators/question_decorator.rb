@@ -1,3 +1,6 @@
+#============================================================================
+# Question decorator.
+#
 class QuestionDecorator < Draper::Decorator
   delegate_all
 

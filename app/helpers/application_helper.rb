@@ -1,3 +1,7 @@
+#============================================================================
+# Application helper. We only add methods here that are universally useable.
+# Anything that deals with a specific model is put in decorators
+#
 module ApplicationHelper
 
   # Return a gender sign

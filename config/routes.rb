@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    api_version(module: 'V1', header: {name: 'Mysterious-API', value: '1'}, default: true) do
+    namespace :v1 do
       devise_scope :user do
         post 'sessions', to: 'sessions#create'
         delete 'sessions', to: 'sessions#destroy'

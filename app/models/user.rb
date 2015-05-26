@@ -1,6 +1,8 @@
+#============================================================================
+# user model
+#
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # Include default devise modules.
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -8,6 +10,7 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
+  # Make searchable
   def self.search(search)
     if search
       where('email LIKE :srch', srch: "%#{search}%")

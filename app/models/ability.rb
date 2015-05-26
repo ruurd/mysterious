@@ -1,3 +1,6 @@
+#============================================================================
+# CanCanCan ability model describes authorizations for a user
+#
 class Ability
   include CanCan::Ability
 

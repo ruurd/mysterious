@@ -1,3 +1,7 @@
+#============================================================================
+# Questions controller that checks if answer is related to proper question
+# before taking action.
+#
 class QuestionsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
@@ -5,7 +9,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions
   def index
-    @questions = Question.includes(:answers).search(params[:search]).order(sort_specification).page(params[:page]).includes(:user).decorate
+    @questions = Question.search(params[:search]).order(sort_specification).includes(:user).page(params[:page]).decorate
   end
 
   # GET /questions/1

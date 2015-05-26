@@ -1,3 +1,6 @@
+#============================================================================
+# Application controller. Base class for the Rails application.
+#
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, skip validating the authenticity token

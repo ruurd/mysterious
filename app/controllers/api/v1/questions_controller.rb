@@ -1,3 +1,6 @@
+#============================================================================
+# Questions controller
+#
 class Api::V1::QuestionsController < Api::V1::ApiController
 
   # Don't do CSRF checks on this

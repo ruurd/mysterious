@@ -1,3 +1,6 @@
+#============================================================================
+# Keepalive controller
+#
 class KeepaliveController < ApplicationController
 
   def keepalive
