@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Keepalive monitoring
-  get 'keepalive', to: 'monitor#keepalive'
+  get 'keepalive', to: 'keepalive#keepalive'
 
   # Changing locale
   get 'change_locale', to: 'application#change_locale'
