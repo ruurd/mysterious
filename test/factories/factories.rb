@@ -5,13 +5,15 @@ FactoryGirl.define do
 
   factory :regular_user, class: User do
     id {1}
-    email {'user@local'}
+    email {'user@mctiny.local'}
+    password {'xyzzyuiop'}
     admin {false}
   end
 
   factory :admin_user, class: User do
     id {2}
-    email {'user@local'}
+    email {'admin@mctiny.local'}
+    password {'xyzzyuiop'}
     admin {true}
   end
 
