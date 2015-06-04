@@ -11,6 +11,11 @@ class Api::V1::ApiController < ActionController::Base
     render json: exception, status: :not_found
   end
 
+  # Signal unprocessable when statement invalid
+  rescue_from ActiveRecord::StatementInvalid do |exception|
+    render json: exception, status: :unprocessable_entity
+  end
+
   # Signal unauthorized access with a 403
   rescue_from CanCan::AccessDenied do |exception|
     render json: exception, status: :forbidden

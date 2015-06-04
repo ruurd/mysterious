@@ -23,14 +23,10 @@ class Api::V1::QuestionsController < Api::V1::ApiController
   def create
     @question = Question.new(question_params)
 
-    if can? :create
-      if @question.save
-        render action: 'show', status: :created, location: @question
-      else
-        render json: @question.errors, status: :unprocessable_entity
-      end
+    if @question.save
+      render action: 'show', status: :created, location: @question
     else
-      render json: 'Cannot create question', status: :forbidden
+      render json: @question.errors, status: :unprocessable_entity
     end
   end
 
