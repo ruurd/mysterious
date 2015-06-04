@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Use devise for authentication
-  devise_for :users
+  devise_for :user
 
   # Keepalive monitoring
   get 'keepalive', to: 'keepalive#keepalive'
