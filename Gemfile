@@ -11,8 +11,8 @@ gem 'pg'
 # draper is a gem that adds decorators to models.
 gem 'draper'
 
-# rails_config is a gem that adds multi-level configuration to rails
-gem 'rails_config'
+# config formerly rails_config is a gem that adds multi-level configuration to rails
+gem 'config'
 
 # Authentication...
 gem 'devise'
@@ -41,11 +41,11 @@ gem 'google-search'
 # bullet is a development gem that helps you reduce queries
 group :development do
   gem 'bullet'
+  gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
